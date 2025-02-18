@@ -92,7 +92,7 @@ const AppointmentBooking = () => {
       createdAt: new Date(),
     };
     axios
-      .post("http://localhost:5000/submit", updatedFormData)
+      .post("https://forms.netpuppys.com/submit", updatedFormData)
       .then(() => {
         setLoader(false);
         toast.success("Your Appointment is confirmed with Gauri Singh");
