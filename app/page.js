@@ -396,7 +396,7 @@ const AppointmentBooking = () => {
       </div>
       <ToastContainer closeButton closeOnClick={true} />
       {loader && (
-        <div className="w-full h-screen absolute top-0 z-30 bg-white backdrop-blur-md bg-opacity-20">
+        <div className="w-full flex justify-center items-center h-screen absolute top-0 z-30 bg-white backdrop-blur-md bg-opacity-20">
           <ThreeDots color="#b90124" />
         </div>
       )}
