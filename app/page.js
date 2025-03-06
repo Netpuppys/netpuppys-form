@@ -264,7 +264,7 @@ const AppointmentBooking = () => {
                   className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full mb-2"
                   required
                 />
-                <label>Company Website URL *</label>
+                <label>Company Website URL (Optional)</label>
                 <input
                   type="text"
                   name="website"
@@ -272,7 +272,6 @@ const AppointmentBooking = () => {
                   placeholder="Company Website URL"
                   onChange={handleInputChange}
                   className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full mb-2"
-                  required
                 />
                 <label>Estimated Budget *</label>
                 <select
@@ -303,14 +302,51 @@ const AppointmentBooking = () => {
                   </option>
                 </select>
                 <label>Which product/service you want to promote? *</label>
-                <textarea
+                <select
                   name="service"
                   value={formData.service}
-                  placeholder="Which product/service you want to promote?"
                   onChange={handleInputChange}
-                  className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full mb-2"
+                  className={`border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full mb-2 ${
+                    formData.service === "" ? "text-[#aaaaaa]" : ""
+                  }`}
                   required
-                ></textarea>
+                >
+                  <option
+                    defaultValue
+                    disabled
+                    className="text-[#aaaaaa]"
+                    value=""
+                  >
+                    Select
+                  </option>
+                  <option
+                    className="text-black"
+                    value="Advertising and Marketing"
+                  >
+                    Advertising and Marketing
+                  </option>
+                  <option
+                    className="text-black"
+                    value="Content Creation and Curation"
+                  >
+                    Content Creation and Curation
+                  </option>
+                  <option className="text-black" value="Influencer Marketing">
+                    Influencer Marketing
+                  </option>
+                  <option className="text-black" value="Social Media Marketing">
+                    Social Media Marketing
+                  </option>
+                  <option
+                    className="text-black"
+                    value="Search Engine Optimization"
+                  >
+                    Search Engine Optimization
+                  </option>
+                  <option className="text-black" value="Web Development">
+                    Web Development
+                  </option>
+                </select>
                 <label>When are you planning to start? *</label>
                 <select
                   name="startTime"
@@ -339,49 +375,15 @@ const AppointmentBooking = () => {
                     Next Month
                   </option>
                 </select>
-                <label>Company Employee Size *</label>
-                <select
-                  name="employeeSize"
-                  value={formData.employeeSize}
-                  onChange={handleInputChange}
-                  className={`border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full mb-2 ${
-                    formData.employeeSize === "" ? "text-[#aaaaaa]" : ""
-                  }`}
-                  required
-                >
-                  <option
-                    defaultValue
-                    disabled
-                    className="text-[#aaaaaa]"
-                    value=""
-                  >
-                    Select
-                  </option>
-                  <option className="text-black" value="0-10">
-                    0-10
-                  </option>
-                  <option className="text-black" value="10-25">
-                    10-25
-                  </option>
-                  <option className="text-black" value="25-50">
-                    25-50
-                  </option>
-                  <option className="text-black" value="50-100">
-                    50-100
-                  </option>
-                  <option className="text-black" value="above 100">
-                    Above 100
-                  </option>
-                </select>
-                <label>Your Designation *</label>
+
+                <label>Your Designation</label>
                 <input
                   type="text"
                   name="designation"
                   value={formData.designation}
-                  placeholder="Your Designation"
+                  placeholder="Your Designation (Optional)"
                   onChange={handleInputChange}
                   className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full"
-                  required
                 />
                 <button
                   type="submit"
