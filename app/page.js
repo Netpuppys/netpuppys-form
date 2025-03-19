@@ -34,7 +34,7 @@ const AppointmentBooking = () => {
       .post("https://forms.netpuppys.com/submit", updatedFormData)
       .then(() => {
         setLoader(false);
-        toast.success("Your Appointment is confirmed with Gauri Singh");
+        toast.success("Your Enquiry is submitted successfully");
         setFormData({
           name: "",
           email: "",
