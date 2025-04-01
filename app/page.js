@@ -17,6 +17,7 @@ const AppointmentBooking = () => {
     service: "",
     startTime: "",
     designation: "",
+    description: "",
   });
 
   const handleInputChange = (e) => {
@@ -44,6 +45,7 @@ const AppointmentBooking = () => {
           service: "",
           startTime: "",
           designation: "",
+          description: "",
         });
       })
       .catch((error) => {
@@ -222,6 +224,14 @@ const AppointmentBooking = () => {
                 name="designation"
                 value={formData.designation}
                 placeholder="Your Designation (Optional)"
+                onChange={handleInputChange}
+                className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full"
+              />
+              <label>Message</label>
+              <teaxtarea
+                name="description"
+                value={formData.description}
+                placeholder="Your Message (Optional)"
                 onChange={handleInputChange}
                 className="border focus:outline-none placeholder:text-[#aaaaaa] p-2 w-full"
               />
